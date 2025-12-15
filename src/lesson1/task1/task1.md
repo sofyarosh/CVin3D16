@@ -100,6 +100,6 @@
 ## Sparcial
 
 <div style="display:flex; flex-direction:row; justify-content:space-between;">
-  <img src="images/sparcial1.png" width="45%">
-  <img src="images/sparcial2.png" width="45%">
+  <img src="images/spatial1.png" width="45%">
+  <img src="images/spatial2.png" width="45%">
 </div>
