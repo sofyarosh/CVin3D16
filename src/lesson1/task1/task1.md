@@ -53,7 +53,7 @@
 
 ---
 
-## Ответы на вопросы анализа
+## Ответы на вопросы
 
 ### 1. Какой метод дал наилучший визуальный результат при уменьшении количества точек вдвое?
 Наилучший визуальный результат показал метод **Spatial (Spatially uniform)**.  
@@ -80,25 +80,26 @@
 В ходе работы были изучены три метода субсэмплинга в CloudCompare.  
 Лучшее качество при уменьшении количества точек примерно в два раза показал метод **Spatial (Spatially uniform)**.  
 Метод **Random** уступает по качеству но быстрый .  
-Метод **Octree-based** хорошо сохранил структуру объекта и быстрый, хороший баланс.
+Метод **Octree-based** хорошо сохранил структуру объекта и быстрый.
 
-# Lesson 1 — Task 1
+## Скрины
 
 ## Random
 
-![Random 1](images/random1.png)
-![Random 2](images/random2.png)
-
----
-
+<div style="display:flex; flex-direction:row; justify-content:space-between;">
+  <img src="images/random1.png" width="45%">
+  <img src="images/random2.png" width="45%">
+</div>
 ## Octree
 
-![Octree 1](images/octree1.png)
-![Octree 2](images/octree2.png)
-
----
+<div style="display:flex; flex-direction:row; justify-content:space-between;">
+  <img src="images/octree1.png" width="45%">
+  <img src="images/octree2.png" width="45%">
+</div>
 
 ## Sparcial
 
-![Sparcial 1](images/sparcial1.png)
-![Sparcial 2](images/sparcial2.png)
+<div style="display:flex; flex-direction:row; justify-content:space-between;">
+  <img src="images/sparcial1.png" width="45%">
+  <img src="images/sparcial2.png" width="45%">
+</div>
