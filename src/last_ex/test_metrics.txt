@@ -1,0 +1,17 @@
+Overall Accuracy (OA): 0.4816
+Mean IoU (mIoU): 0.1831
+
+--- IoU по классам ---
+ceiling        : 0.3617
+floor          : 0.3426
+wall           : 0.2064
+beam           : 0.0000
+column         : 0.0000
+window         : 0.1795
+door           : 0.0000
+table          : 0.0000
+chair          : 0.4036
+sofa           : nan
+bookcase       : 0.0000
+board          : nan
+clutter        : 0.5203
