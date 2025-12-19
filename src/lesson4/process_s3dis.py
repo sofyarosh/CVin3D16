@@ -4,10 +4,7 @@ import matplotlib.pyplot as plt
 import h5py
 
 def process_s3dis_area(area_path, class_mapping):
-    """
-    Обрабатывает все комнаты в одной области (Area) датасета S3DIS.
-    (Код этой функции остается без изменений)
-    """
+ 
     if not os.path.isdir(area_path):
         print(f"Директория не найдена: {area_path}")
         return None
@@ -55,10 +52,7 @@ def process_s3dis_area(area_path, class_mapping):
     return processed_data
 
 def visualize_label_distribution(labels, output_filename='label_distribution.png'):
-    """
-    Строит и сохраняет гистограмму распределения меток классов.
-    (Код этой функции остается без изменений)
-    """
+ 
     unique_labels, counts = np.unique(labels, return_counts=True)
     
     plt.figure(figsize=(12, 6))
@@ -83,9 +77,9 @@ def main(dataset_path):
     all_areas_data = []
     class_mapping = {}
 
-    # --- ИЗМЕНЕНИЕ ЗДЕСЬ ---
+
     # Обрабатываем только 'Area_1' для экономии времени и места.
-    # Чтобы обработать все области, замените эту строку на:
+
     # area_folders = sorted([d for d in os.listdir(dataset_path) if d.startswith('Area_')])
     area_folders = ['Area_1']
     print(f"ВНИМАНИЕ: Для оптимизации будет обработана только папка: {area_folders}")
@@ -109,24 +103,11 @@ def main(dataset_path):
     final_dataset = np.vstack(all_areas_data)
 
     print("\nСохранение данных...")
-    # 4. Сохранение в основном формате .npy (обязателен по заданию)
+
     np.save('s3dis_dataset.npy', final_dataset)
     print("Данные сохранены в s3dis_dataset.npy")
     
-    # --- ИЗМЕНЕНИЕ ЗДЕСЬ ---
-    # Следующие строки закомментированы, чтобы избежать создания очень больших файлов.
-    # Они не обязательны для сдачи задания, если есть .npy файл.
-    #
-    # print("Сохранение в .txt (может занять много времени и места)...")
-    # np.savetxt('s3dis_dataset.txt', final_dataset, fmt='%.6f')
-    # print("Данные сохранены в s3dis_dataset.txt")
-    #
-    # print("Сохранение в .h5...")
-    # with h5py.File('s3dis_dataset.h5', 'w') as hf:
-    #     hf.create_dataset('dataset', data=final_dataset)
-    # print("Данные сохранены в s3dis_dataset.h5")
 
-    # Вывод первых 5 строк
     print("\nПервые 5 строк итогового массива:")
     print(final_dataset[:5, :])
     
