@@ -417,7 +417,7 @@ compute_reconstruction_quality(mesh, original_pts) → dict
 
 ### Классификация геометрии
 
-![Результаты pipeline](16_output/plots/pipeline_results.png)
+![Результаты pipeline](Output/plots/pipeline_results.png)
 
 | Класс | Сегментов | Доля | Основной метод |
 |-------|-----------|------|----------------|
@@ -432,7 +432,7 @@ compute_reconstruction_quality(mesh, original_pts) → dict
 
 ### Качество реконструкции по сегментам
 
-![Качество по классам](16_output/plots/quality_by_class.png)
+![Качество по классам](Output/plots/quality_by_class.png)
 
 | Label | RMSE mean | RMSE median | Примечание |
 |-------|-----------|-------------|------------|
@@ -460,13 +460,13 @@ Poisson показывает лучший средний RMSE. Важно пон
 
 ### Детальный анализ одного объекта
 
-![Детальный анализ](16_output/plots/detailed_valve_0001_lidar_classes.png)
+![Детальный анализ](Output/plots/detailed_valve_0001_lidar_classes.png)
 
 ---
 
 ## Сравнение с эталонами
 
-![Ранжирование эталонов](16_output/plots/obj_ranking.png)
+![Ранжирование эталонов](Output/plots/obj_ranking.png)
 
 Сравнение проводится в **нормализованном пространстве единичной сферы**: оба облака точек (реконструированное и эталонное) центрируются и масштабируются к единичной сфере, после чего считается двунаправленный RMSE. Такая нормализация позволяет сравнивать формы независимо от масштаба и положения в пространстве.
 
