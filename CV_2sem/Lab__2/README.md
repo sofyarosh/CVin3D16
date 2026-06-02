@@ -3,19 +3,6 @@
 
 ---
 
-## Содержание
-
-1. [Описание задачи](#описание-задачи)
-2. [Структура репозитория](#структура-репозитория)
-3. [Данные](#данные)
-4. [Архитектура pipeline](#архитектура-pipeline)
-5. [Описание функций](#описание-функций)
-6. [Исследовательские находки](#исследовательские-находки)
-7. [Результаты](#результаты)
-8. [Сравнение с эталонами](#сравнение-с-эталонами)
-9. [Зависимости](#зависимости)
-
----
 
 ## Описание задачи
 
@@ -23,42 +10,6 @@
 
 Датасет — 500 облаков точек одного типа инженерных объектов. Каждое облако содержит заранее размеченные сегменты (поле `scalar_Label`), каждый из которых анализируется и реконструируется независимо, после чего сегменты собираются в итоговую 3D-модель.
 
----
-
-## Структура репозитория
-
-```
-.
-├── Lab2_final_results.ipynb        # основной ноутбук Google Colab
-├── README.md                       # этот файл
-│
-├── Output/
-│   ├── reconstructed_models/       # не выгружены на гитхаб: 500 реконструированных PLY-моделей
-│   │   ├── valve_0001_lidar_classes_reconstructed.ply
-│   │   ├── valve_0002_lidar_classes_reconstructed.ply
-│   │   └── ... (500 файлов, ~770 MB)
-│   │
-│   ├── metrics/                    # CSV-таблицы с метриками
-│   │   ├── dataset_statistics.csv          # статистика по 500 файлам
-│   │   ├── segment_size_by_label.csv       # размеры сегментов по label
-│   │   ├── geo_analysis_50_sample.csv      # геоанализ по выборке 50 файлов
-│   │   ├── pipeline_summary.csv            # сводка по всем 500 файлам
-│   │   ├── segment_details.csv             # детали по каждому сегменту
-│   │   ├── obj_comparison_v2.csv           # сравнение с OBJ-эталонами
-│   │   └── obj_reference_stats.csv         # статистика OBJ-файлов
-│   │
-│   ├── plots/                      # PNG-графики
-│   │   ├── dataset_statistics.png          # EDA датасета
-│   │   ├── segment_size_distribution.png   # распределение размеров сегментов
-│   │   ├── pipeline_results.png            # итоговые результаты pipeline
-│   │   ├── quality_by_class.png            # качество реконструкции по классам
-│   │   ├── obj_comparison.png              # сравнение с OBJ-эталонами
-│   │   ├── obj_ranking.png                 # ранжирование эталонов по RMSE
-│   │   └── detailed_valve_*.png            # детальный анализ отдельных объектов
-│   │
-│   ├── logs/
-│   │   └── checkpoint.json                 # чекпоинт прогресса обработки
-```
 
 ---
 
@@ -501,25 +452,44 @@ Poisson показывает лучший средний RMSE. Важно пон
 
 ---
 
-## Зависимости
+
+---
+
+## Структура репозитория
 
 ```
-open3d >= 0.17
-trimesh
-numpy
-scipy
-scikit-learn
-matplotlib
-pandas
-tqdm
-plyfile
+.
+├── Lab2_final_results.ipynb        # основной ноутбук Google Colab
+├── README.md                       # этот файл
+│
+├── Output/
+│   ├── reconstructed_models/       # не выгружены на гитхаб: 500 реконструированных PLY-моделей
+│   │   ├── valve_0001_lidar_classes_reconstructed.ply
+│   │   ├── valve_0002_lidar_classes_reconstructed.ply
+│   │   └── ... (500 файлов, ~770 MB)
+│   │
+│   ├── metrics/                    # CSV-таблицы с метриками
+│   │   ├── dataset_statistics.csv          # статистика по 500 файлам
+│   │   ├── segment_size_by_label.csv       # размеры сегментов по label
+│   │   ├── geo_analysis_50_sample.csv      # геоанализ по выборке 50 файлов
+│   │   ├── pipeline_summary.csv            # сводка по всем 500 файлам
+│   │   ├── segment_details.csv             # детали по каждому сегменту
+│   │   ├── obj_comparison_v2.csv           # сравнение с OBJ-эталонами
+│   │   └── obj_reference_stats.csv         # статистика OBJ-файлов
+│   │
+│   ├── plots/                      # PNG-графики
+│   │   ├── dataset_statistics.png          # EDA датасета
+│   │   ├── segment_size_distribution.png   # распределение размеров сегментов
+│   │   ├── pipeline_results.png            # итоговые результаты pipeline
+│   │   ├── quality_by_class.png            # качество реконструкции по классам
+│   │   ├── obj_comparison.png              # сравнение с OBJ-эталонами
+│   │   ├── obj_ranking.png                 # ранжирование эталонов по RMSE
+│   │   └── detailed_valve_*.png            # детальный анализ отдельных объектов
+│   │
+│   ├── logs/
+│   │   └── checkpoint.json                 # чекпоинт прогресса обработки
 ```
 
-Установка:
-```bash
-pip install open3d trimesh scipy scikit-learn matplotlib pandas tqdm plyfile
-```
 
 Среда выполнения: **Google Colab** (GPU не требуется, RAM ~12 GB достаточно).
 Время обработки 500 файлов: ~60 минут на стандартной Colab-сессии.
-При обрыве сессии — повторный запуск ячейки автоматически продолжит с чекпоинта.
