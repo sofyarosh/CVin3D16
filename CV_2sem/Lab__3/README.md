@@ -89,7 +89,7 @@
 
 **Классы**
 
-![per-class](class_distribution_full.png)
+![per-class](figures/class_distribution_full.png)
 
 В задании предусмотрено 19 классов, но в данных представлены только **12**. Остальные 7 (`conveyor`, `roof`, `window`, `door`, `gate`, `terrain`, `facade`) отсутствуют. Метки были перенумерованы в диапазон `[0..11]`, неиспользуемые ID отброшены.
 
