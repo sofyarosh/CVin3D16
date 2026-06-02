@@ -1,0 +1,21 @@
+{
+  "0": "unknown",
+  "1": "pipe",
+  "2": "wire",
+  "3": "wall",
+  "4": "floor",
+  "5": "ceiling",
+  "6": "machine",
+  "7": "desk",
+  "8": "rack",
+  "9": "boiler",
+  "10": "conveyor",
+  "11": "structure",
+  "12": "infrastructure",
+  "13": "roof",
+  "14": "window",
+  "15": "door",
+  "16": "gate",
+  "17": "terrain",
+  "18": "facade"
+}
